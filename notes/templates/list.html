@@ -1,6 +1,14 @@
+<html>
+<head>
+</head>
+
+<body>
+
 {% for note in notes.all %}
 
     <a href="{% url 'notes:view' note.id %}">
         {{ note }}
     </a>
 {% endfor %}
+
+</body>
