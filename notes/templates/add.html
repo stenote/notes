@@ -57,31 +57,16 @@
             text-align: right;
         }
 
-        #in #toolbar input {
-            font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-            vertical-align: middle;
-            width: 260px;
-            height: 30px;
-            padding: 2px 10px;
-            font-size: 14px;
-            background: #FFF;
-            border: 1px solid rgba(34,36,38,.15);
-            color: rgba(0,0,0,.87);
-            border-radius: 4px;
-        }
-
         #in #toolbar button {
             background-color: #0d71bb;
-            color: #FFF;
+            color: #fff;
             text-shadow: none;
-            margin-left: 4px;
             box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
             font-size: 14px;
             cursor: pointer;
             display: inline-block;
             border: none;
             vertical-align: middle;
-            height: 36px;
             font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
             padding: 10px 16px;
             text-transform: none;
@@ -339,9 +324,7 @@
 </head>
 <body>
 <div id="in">
-
     <div id="toolbar">
-        <input type="text" form="add-form" placeholder="标题" name="title" />
         <button type="submit" form="add-form"> Submit </button>
     </div>
 
@@ -349,8 +332,8 @@
         {% csrf_token %}
         <textarea id="code" name="text"></textarea>
     </form>
-
 </div>
+
 <div id="out"></div>
 
 <script type="text/javascript">

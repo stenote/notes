@@ -48,8 +48,15 @@
             font-size: 24px;
         }
         .list-group-item:hover {
-            background-color: #ddd;
+            background-color: #efefef;
 
+        }
+
+        .time {
+            float: right;
+            font-size: 16px;
+            line-height: 28px;
+            vertical-align: middle;
         }
 
         body {
@@ -65,6 +72,10 @@
             <li class="list-group-item title">
                 <a href="{% url 'notes:view' note.id %}">
                     {{ note }}
+
+                    <span class="time">
+                        {{ note.time|date:'Y/m/d' }}
+                    </span>
                 </a>
             </li>
         {% endfor %}
