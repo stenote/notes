@@ -25,14 +25,23 @@ def add(request):
 
         note.save()
 
-        return HttpResponseRedirect(reverse('notes:view', args=(note.id, )))
+        return HttpResponseRedirect(reverse('notes:view', args=(note.ref, )))
     else:
         return render(request, 'add.html')
 
 
-def view(request, note_id):
+def delete(request, note_ref):
 
-    note = get_object_or_404(Note, pk=note_id)
+    note = get_object_or_404(Note, ref=note_ref)
+
+    note.delete()
+
+    return HttpResponseRedirect(reverse('notes:list'))
+
+
+def view(request, note_ref):
+
+    note = get_object_or_404(Note, ref=note_ref)
 
     return render(request, 'view.html', {
         'note': note
