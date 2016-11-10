@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markdown Editor</title>
+    {% load static %}
+    <link href="{% static "favicon.ico" %}" rel="shortcut icon"/>
+    <style type="text/css">
+        body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #passwd-form {
+            position: fixed;
+            bottom: 0;
+            top: 40%;
+            left: 50%;
+            margin-left: -130px;
+            margin-top: -20px;
+            width: 260px;
+            height: 40px;
+            overflow: auto;
+            font-size: 14px;
+            box-shadow: -1px 2px 6px 1px rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            text-align: center;
+        }
+
+        #passwd-form button {
+            background-color: #0d71bb;
+            color: #fff;
+            text-shadow: none;
+            box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-block;
+            border: none;
+            vertical-align: middle;
+            font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+            padding: 10px 16px;
+            text-transform: none;
+            font-weight: 700;
+            font-style: normal;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        #passwd-form input {
+            font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+            vertical-align: middle;
+            width: 150px;
+            height: 30px;
+            padding: 2px 10px;
+            font-size: 14px;
+            background: #FFF;
+            border: 1px solid rgba(34,36,38,.15);
+            color: rgba(0,0,0,.87);
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+<form method="post" id="passwd-form">
+    {% csrf_token %}
+    <input type="password" placeholder="请填写密码" name="passwd" />
+    <button type="submit"> Submit </button>
+</form>
+</body>
+</html>
