@@ -22,10 +22,10 @@ def add(request):
         passwd = request.POST['passwd']
         note = Note(title=title, text=text, passwd=passwd)
 
-        if len(passwd):
-            request.session[note_ref] = True
-
         note.save()
+
+        if len(passwd):
+            request.session[str(note.ref)] = True
 
         return HttpResponseRedirect(reverse('notes:view', args=(note.ref, )))
     else:
