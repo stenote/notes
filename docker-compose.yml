@@ -1,0 +1,8 @@
+note:
+  build: .
+  container_name: note
+  volumes:
+    - .:/usr/src/app
+  environment:
+    - VIRTUAL_HOST=note.6rz.in
+  restart: always
